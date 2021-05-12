@@ -11,8 +11,8 @@ receiver = AudioReceiver(local_id_address, 6666)
 
 
 def start_listening():
-    t1 = threading.Thread(server.start_server)
-    t2 = threading.Thread(receiver.start_server)
+    t1 = threading.Thread(target=server.start_server)
+    t2 = threading.Thread(target=receiver.start_server)
     t1.start()
     t2.start()
 
